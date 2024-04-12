@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "343a4c60-ccb3-4388-88d2-134d737a4e28",
+		"name": "hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14423018"
+	},
+	"item": [
+		{
+			"name": "ResumeMatchAPI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"context\": \"java dev\",\n    \"category\": \"resume\",\n    \"threshold\": 0.7,\n    \"noOfmatches\":8,\n    \"inputPath\": \"https://console.cloud.google.com/storage/browser/hackathontestdata2024\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://us-central1-wellsfargo-genai24-8049.cloudfunctions.net/resumematching-api"
+			},
+			"response": []
+		},
+		{
+			"name": "Job Search API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Control-Allow-Origin",
+						"value": " *,",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Allow-Methods",
+						"value": "POST",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Allow-Headers",
+						"value": " Content-Type,",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Max-Age",
+						"value": " 3600",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"context\": \"Lead Java Full stack\",\n    \"category\": \"job\",\n    \"threshold\": 0.7,\n    \"noOfmatches\":13,\n    \"inputPath\": \"https://console.cloud.google.com/storage/browser/hackathon1415\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://us-central1-wellsfargo-genai24-8049.cloudfunctions.net/resumematching-api"
+			},
+			"response": []
+		}
+	]
+}

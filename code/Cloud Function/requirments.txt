@@ -1,0 +1,4 @@
+Flask
+functions-framework==3.*
+google-cloud-aiplatform
+flask-cors
